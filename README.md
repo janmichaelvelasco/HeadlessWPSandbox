@@ -1,0 +1,2 @@
+# HeadlessWPSandbox
+Created with CodeSandbox
