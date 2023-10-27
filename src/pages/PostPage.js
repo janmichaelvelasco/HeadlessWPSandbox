@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import PostPageContent from "../components/PostPageContent";
 import { gql, useQuery } from "@apollo/client";
 
+// import { data } from "../dummy-data/post";
+
 const GET_POST_BY_SLUG = gql`
   query getPostBySlug($id: ID!) {
     post(id: $id, idType: SLUG) {
@@ -25,12 +27,14 @@ const GET_POST_BY_SLUG = gql`
 `;
 
 export default function PostPage(props) {
+  // const loading = false;
+  // const error = null;
  const { loading, error, data } = useQuery(GET_POST_BY_SLUG, {
 	variables: {
 		id: props.match.params.slug
 	}
 });
-
+//  const data;
  const postFound = Boolean(data?.post);
 
  return (
